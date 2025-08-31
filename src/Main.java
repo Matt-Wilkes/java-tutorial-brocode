@@ -1,47 +1,53 @@
-//Main class needed for code to run
+//Scanner is used for user input
+import java.util.Scanner;
 public class Main {
-//    method needed in order for program to run
+
     public static void main(String[] args){
 
-//    Variables
-//        primitive = Simple value stored directly in memory (stack)
-//        reference = memory address (stack) that points to the (heap)
-//        primitive = int, double, char, boolean
-//        reference = string, array, object
+    Scanner scanner = new Scanner(System.in);
 
-//       2 steps: 1. declaration and 2. assignment
-//        declaration
-        int age = 30;
-        int year = 2025;
-        int quantity = 1;
+        System.out.print("Enter your name: ");
+//        declaration + assignment
+        String name = scanner.nextLine(); // can use next if you don't want to read the spaces
 
-        double price = 19999.99;
-        double gpa = 3.5;
-        double temperature = -12.5;
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();
 
-//        chars use single quotes ''
-        char grade = 'A';
-        char symbol = '!';
-        char currency = '£';
+        System.out.print("What is your GPA?");
+        double gpa = scanner.nextDouble();
 
-        boolean isStudent = true;
-        boolean forSale = true;
-        boolean isOnline = true;
+        System.out.println("Are you a student? (true/false): ");
+        boolean isStudent = scanner.nextBoolean();
 
-//        Strings use double quotes ""
-        String name = "Matt ";
-        String food = "Tuna";
-        String email = "fake@example.com";
-        String car = "mustang";
-        String color = "red";
+        System.out.println("hello " + name);
+        System.out.println("you are " + age + " years old");
+        System.out.println("your GPA is: " + gpa);
+        System.out.println("Student: " + isStudent);
 
-        System.out.println("Your choice is a " + color + " " + year + " " + car);
-        System.out.println("The price is " + currency + price);
-
-        if(forSale){
-            System.out.println("There is a " + car + " for sale ");
+        if(isStudent){
+            System.out.println("You are enrolled as a student");
         } else{
-            System.out.println("There is not a car for sale");
+            System.out.println("You are NOT enrolled");
         }
+
+//        common problems
+
+        System.out.println("Enter your favourite number");
+        int favouriteNumber = scanner.nextInt();
+        /*       new line character from favouriteNUmber will be stored in favouriteColour if nothing called
+         after scanner.nextInt()
+        */
+//      nextLine called to clear the input buffer
+        scanner.nextLine();
+
+        System.out.print("Enter your favourite colour: ");
+
+        String favouriteColour = scanner.nextLine();
+
+
+        System.out.println("Your favourite number is: " + favouriteNumber);
+
+//good practice to close the scanner after input, could lead to unexpected behaviour if not
+    scanner.close();
     }
 }
