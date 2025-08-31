@@ -1,31 +1,35 @@
-import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args){
+        Random random = new Random();
 
-//        shopping cart program
-        Scanner scanner = new Scanner(System.in);
+        int number1;
+        int number2;
+        int number3;
+        number1 = random.nextInt(1, 101);
+        number2 = random.nextInt(1, 101);
+        number3 = random.nextInt(1, 101);
 
-        String item;
-        double price;
-        int quantity;
-        char currency = '£';
-        double total;
+        System.out.println(number1);
+        System.out.println(number2);
+        System.out.println(number3);
 
-        System.out.print("What item would you like to buy?: ");
-        item = scanner.nextLine();
+        double number4;
+        double number5;
+        double number6;
+        number4 = random.nextDouble(1, 101);
+        number5 = random.nextDouble(1, 101);
+        number6 = random.nextDouble(1, 101);
 
-        System.out.print("What is the price for each?: ");
-        price = scanner.nextDouble();
+        System.out.println(number4);
+        System.out.println(number5);
+        System.out.println(number6);
 
-        System.out.print("How many would you like?: ");
-        quantity = scanner.nextInt();
+        boolean isHeads;
 
-        total = price * quantity;
-
-        System.out.println("\nYou have bought " + quantity + " " + item + "/s");
-        System.out.println("Your total is: " + currency + total);
-        scanner.close();
+        isHeads = random.nextBoolean();
+        System.out.println(isHeads);
     }
 }
