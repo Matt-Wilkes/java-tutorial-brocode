@@ -1,35 +1,26 @@
 import java.util.Scanner;
+
 public class Main {
 
-//    compound interest calculator
+    public static void main(String[] args) {
 
-    public static void main(String[] args){
-    Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-    double principal;
-    double rate;
-    int timesCompounded;
-    int years;
-    double amount;
+        double temp;
+        double newTemp;
+        String unit;
 
-    System.out.print("Enter the principal amount: ");
-    principal = scanner.nextDouble();
+        System.out.print("Enter the temperature: ");
+        temp = scanner.nextDouble();
 
-    System.out.print("Enter the interest rate (%): ");
-    rate = scanner.nextDouble() / 100;
+        System.out.print("Convert to celcius or fahrenheit? (C or F): ");
+        unit = scanner.next().toUpperCase();
 
-    System.out.print("Enter the number of times compounded per year: ");
-    timesCompounded = scanner.nextInt();
+        newTemp = (unit.equals("C")) ? (temp - 32) * 5 / 9 : (temp * 9 / 5) + 32;
 
-    System.out.print("Enter the # of years: ");
-    years = scanner.nextInt();
+        System.out.printf("%.1f%s", newTemp, unit);
 
-    amount = principal * Math.pow(1 + rate / timesCompounded, timesCompounded * years);
-
-        System.out.printf("the amount after %d years is £%.2f", years, amount );
-
-    scanner.close();
-
+        scanner.close();
 
     }
 }
