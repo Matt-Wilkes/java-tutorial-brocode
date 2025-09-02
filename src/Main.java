@@ -2,10 +2,16 @@
 public class Main {
 
     public static void main(String[] args) {
-        Car car = new Car("Ford", "Mustang", 2025, "Red");
-        Car car2 = new Car("Chevrolet", "Corvette", 2026, "Blue");
+    Circle circle = new Circle(3);
+    Triangle triangle = new Triangle(4, 5);
+    Rectangle rectangle = new Rectangle(6, 7);
 
-        System.out.println(car);
-        System.out.println(car2);
+    circle.display();
+    triangle.display();
+    rectangle.display();
+
+        System.out.println(circle.area());
+        System.out.println(triangle.area());
+        System.out.println(rectangle.area());
     }
 }
