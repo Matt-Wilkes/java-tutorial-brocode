@@ -2,16 +2,17 @@
 public class Main {
 
     public static void main(String[] args) {
-    Circle circle = new Circle(3);
-    Triangle triangle = new Triangle(4, 5);
-    Rectangle rectangle = new Rectangle(6, 7);
+    Car car = new Car();
+    Bike bike = new Bike();
+    Boat boat = new Boat();
 
-    circle.display();
-    triangle.display();
-    rectangle.display();
+//    car, bike and boat all have Vehicle in common
+//        they all identify as vehicles
+    Vehicle[] vehicles = {car, bike, boat};
 
-        System.out.println(circle.area());
-        System.out.println(triangle.area());
-        System.out.println(rectangle.area());
+    for(Vehicle vehicle: vehicles){
+        vehicle.go();
+    }
+
     }
 }
